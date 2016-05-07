@@ -1,1 +1,5 @@
-Projeto P1
+#Projeto P1
+
+###Professor Baldoino
+
+####Equipe: Alex Silva, Jonathan Alves, Marcelo Lima.
