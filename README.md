@@ -2,5 +2,5 @@
 
 ###Professor Baldoino
 
-####Equipe: Alex Silva, Jonathan Alves, Marcelo Lima.
+####Equipe: Alex Souza, Jonathan Alves, Marcelo Lima.
 
