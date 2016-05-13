@@ -1,4 +1,5 @@
 #include <allegro.h>
+#include <stdio.h>
 
 volatile int ticks;
 void tick_couter()
@@ -6,6 +7,13 @@ void tick_couter()
 	ticks++;
 }
 END_OF_FUNCTION(tick_couter);
+
+volatile int milisegundos;
+void msec_couter()
+{ 
+	milisegundos++;
+}
+END_OF_FUNCTION(msec_couter);
 
 int main()
 {
@@ -19,16 +27,25 @@ int main()
 	ticks = 0;
 	LOCK_FUNCTION(tick_couter);
 	LOCK_VARIABLE(ticks);
-	install_int_ex(tick_couter, MSEC_TO_TIMER(310));//frames por seg para ficar lento como no jogo
+	install_int_ex(tick_couter, BPS_TO_TIMER(15));//frames por seg
+
+	milisegundos = 0;
+	LOCK_FUNCTION(msec_couter);
+	LOCK_VARIABLE(milisegundos);
+	install_int_ex(msec_couter, MSEC_TO_TIMER(1));
 
 
 	//BITMAPS
 	BITMAP *buffer = create_bitmap(SCREEN_W, SCREEN_H);
 
+	BITMAP *invasor1[2];
+	invasor1[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
 	//VARIAVEL
-	float pos_x = 110, pos_x1 = 135, pos_x2 = 160;
-	float pos_x3 = 110, pos_x4 = 135, pos_x5 = 160;
-	float pos_x6 = 110, pos_x7 = 135, pos_x8 = 160;
+	float pos_x = 110, pos_x1 = 145, pos_x2 = 180;
+	float pos_x3 = 110, pos_x4 = 145, pos_x5 = 180;
+	float pos_x6 = 110, pos_x7 = 145, pos_x8 = 180;
 
 	float vel_x = 20, vel_x1 = 20, vel_x2 = 20;
 	float vel_x3 = 20, vel_x4 = 20, vel_x5 = 20;
@@ -40,6 +57,10 @@ int main()
 
 	int cont = 0;//CONTADOR PARA MOVIMENTA UMA FILA POR VEZ
 
+	int num_frames = 2;
+	int frame_atual = 0;
+	int tempo_trocar = 200;
+
 	while(!key[KEY_ESC])
 	{
 		while(ticks > 0)
@@ -47,6 +68,9 @@ int main()
 			//ENTRADA
 			
 			//ATUALIZAÇÂO
+
+			frame_atual = (milisegundos / tempo_trocar) % num_frames;
+
 			if(cont == 0)
 			{
 				pos_x8 = pos_x8 + vel_x8;// movimentação das bolas brancas
@@ -142,16 +166,16 @@ int main()
 			}
 
 			//DESENHAR
-			circlefill(buffer, pos_x, pos_y, 7, makecol(0, 255, 0));
-			circlefill(buffer, pos_x1, pos_y1, 7, makecol(0, 255, 0));
-			circlefill(buffer, pos_x2, pos_y2, 7, makecol(0, 255, 0));
-			circlefill(buffer, pos_x3, pos_y3, 7, makecol(60, 60, 255));
-			circlefill(buffer, pos_x4, pos_y4, 7, makecol(60, 60, 255));
-			circlefill(buffer, pos_x5, pos_y5, 7, makecol(60, 60, 255));
-			circlefill(buffer, pos_x6, pos_y6, 7, makecol(255, 255, 255));
-			circlefill(buffer, pos_x7, pos_y7, 7, makecol(255, 255, 255));
-			circlefill(buffer, pos_x8, pos_y8, 7, makecol(255, 255, 255));
-			draw_sprite(screen, buffer, 0, 0);
+			draw_sprite(buffer, invasor1[frame_atual], pos_x, pos_y);
+			draw_sprite(buffer, invasor1[frame_atual], pos_x1, pos_y1);
+			draw_sprite(buffer, invasor1[frame_atual], pos_x2, pos_y2);
+			draw_sprite(buffer, invasor1[frame_atual], pos_x3, pos_y3);
+			draw_sprite(buffer, invasor1[frame_atual], pos_x4, pos_y4);
+			draw_sprite(buffer, invasor1[frame_atual], pos_x5, pos_y5);
+			draw_sprite(buffer, invasor1[frame_atual], pos_x6, pos_y6);
+			draw_sprite(buffer, invasor1[frame_atual], pos_x7, pos_y7);
+			draw_sprite(buffer, invasor1[frame_atual], pos_x8, pos_y8);
+			draw_sprite(screen, buffer, 0, 0);			
 			clear(buffer);
 
 			ticks--;
@@ -165,6 +189,9 @@ int main()
 
 	//FINALIZAÇÃO
 	destroy_bitmap(buffer);
+	//destroy_bitmap(invasor1);
+	destroy_bitmap(invasor1[0]);
+	destroy_bitmap(invasor1[1]);
 
 	return 0;
 }
