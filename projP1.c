@@ -1,5 +1,5 @@
 #include <allegro.h>
-#include <stdio.h>
+
 #define VEL 8
 
 volatile int ticks;
@@ -42,6 +42,8 @@ int main()
 	BITMAP *fundo = load_bitmap("img/fundo3.bmp", NULL);
 	BITMAP *moldura = load_bitmap("img/moldura.bmp", NULL);
 	BITMAP *logo = load_bitmap("img/logo.bmp", NULL);
+	BITMAP *nave = load_bitmap("img/nave.bmp", NULL);
+
 	BITMAP *pontos[2];
 	pontos[0] = load_bitmap("img/pontos1.bmp", NULL);
 	pontos[1] = load_bitmap("img/pontos2.bmp", NULL);
@@ -86,17 +88,33 @@ int main()
 
 	int cont = 0;//CONTADOR PARA MOVIMENTA UMA FILA POR VEZ
 
-	int num_frames = 2;
-	int frame_atual = 0;
-	int tempo_trocar = 400;
+	int num_frames = 2, frame_atual = 0, tempo_trocar = 400, i, set_i = 0;
 
 	while(!key[KEY_ESC])
 	{
 		while(ticks > 0)
 		{
 			//ENTRADA
-			
+
+			if(key[KEY_RIGHT])
+			{
+				set_i++;
+			}
+			else if(key[KEY_LEFT])
+			{
+				set_i--;
+			}
+
 			//ATUALIZAÇÂO
+
+			if(set_i >= 185)
+			{
+				set_i = 185;
+			}
+			else if(set_i <= 0)
+			{
+				set_i = 0;
+			}
 
 			frame_atual = (milisegundos / tempo_trocar) % num_frames;
 
@@ -615,6 +633,7 @@ int main()
 			draw_sprite(buffer, invasor1[frame_atual], pos_x51, pos_y51);
 			draw_sprite(buffer, invasor1[frame_atual], pos_x52, pos_y52);
 			draw_sprite(buffer, invasor1[frame_atual], pos_x53, pos_y53);
+			draw_sprite(buffer, nave, 201 + (set_i*3), 550);
 			draw_sprite(buffer, pontos[frame_atual], 75, 30);
 			draw_sprite(screen, buffer, 0, 0);			
 			clear(buffer);
@@ -633,6 +652,7 @@ int main()
 	destroy_bitmap(fundo);
 	destroy_bitmap(moldura);
 	destroy_bitmap(logo);
+	destroy_bitmap(nave);
 	destroy_bitmap(pontos[0]);
 	destroy_bitmap(pontos[1]);
 	destroy_bitmap(invasor1[0]);
