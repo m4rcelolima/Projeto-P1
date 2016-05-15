@@ -39,7 +39,7 @@ Lista_Tiros *Create_Lista_Tiros()
 
 	l->inicio = NULL;
 
-	return 1;
+	return l;
 }
 
 void Insere_Tiro(Lista_Tiros *l, int x, int y)

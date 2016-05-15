@@ -13,7 +13,7 @@ typedef struct tiro
 	int ativo;
 }Tiro;
 
-Tiro* Create_Tiro(int x, int y);
+Tiro *Create_Tiro(int x, int y);
 void Update_Tiro(Tiro *t);
 void Draw_tiro(Tiro *t, BITMAP *buffer);
 void Destroy_Tiro(Tiro *t);
@@ -31,7 +31,7 @@ typedef struct lista_tiros
 	No_tiro *inicio;
 }Lista_Tiros;
 
-Lista_Tiros* Create_Lista_Tiros();
+Lista_Tiros *Create_Lista_Tiros();
 void Insere_Tiro(Lista_Tiros *l, int x, int y);
 void Update_Lista_Tiros(Lista_Tiros *l);
 void Draw_Lista_Tiros(Lista_Tiros *l, BITMAP *buffer);
