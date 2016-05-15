@@ -103,7 +103,7 @@ void Destroy_Lista_Tiros(Lista_Tiros *l)
 	{
 		aux = l->inicio;
 		l->inicio = l->inicio->prox;
-		Draw_Tiro(aux->t);
+		Destroy_Tiro(aux->t);
 		free(aux);
 	}
 }

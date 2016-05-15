@@ -4,6 +4,7 @@
 #include <allegro.h>
 #include <stdlib.h>
 
+
 typedef struct tiro
 {
 	int x;
@@ -35,5 +36,7 @@ void Insere_Tiro(Lista_Tiros *l, int x, int y);
 void Update_Lista_Tiros(Lista_Tiros *l);
 void Draw_Lista_Tiros(Lista_Tiros *l, BITMAP *buffer);
 void Destroy_Lista_Tiros(Lista_Tiros *l);
+
+#include "tiro.c"
 
 #endif
