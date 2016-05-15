@@ -3,9 +3,8 @@
 
 #include <allegro.h>
 #include <stdlib.h>
-#include "tiro.c"
 
-tipedef struct tiro
+typedef struct tiro
 {
 	int x;
 	int y;
@@ -13,10 +12,10 @@ tipedef struct tiro
 	int ativo;
 }Tiro;
 
-Tiro *Create_Tiro(int x, int y);
+Tiro* Create_Tiro(int x, int y);
 void Update_Tiro(Tiro *t);
 void Draw_tiro(Tiro *t, BITMAP *buffer);
-void Destry_Tiro(Tiro *t);
+void Destroy_Tiro(Tiro *t);
 
 //----------------------------------------------
 
@@ -31,10 +30,10 @@ typedef struct lista_tiros
 	No_tiro *inicio;
 }Lista_Tiros;
 
-Lista_Tiros *Create_Lista_Tiros();
+Lista_Tiros* Create_Lista_Tiros();
 void Insere_Tiro(Lista_Tiros *l, int x, int y);
 void Update_Lista_Tiros(Lista_Tiros *l);
 void Draw_Lista_Tiros(Lista_Tiros *l, BITMAP *buffer);
-void Destry_Lista_Tiros(Lista_Tiros *l);
+void Destroy_Lista_Tiros(Lista_Tiros *l);
 
 #endif

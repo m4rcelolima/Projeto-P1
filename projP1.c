@@ -89,7 +89,7 @@ int main()
 	int cont = 0;//CONTADOR PARA MOVIMENTA UMA FILA POR VEZ
 
 	int num_frames = 2, frame_atual = 0, tempo_trocar = 400, i, set_i = 0;
-	int nave_x = 201, nave_y = 550
+	int nave_x = 201, nave_y = 550;
 	//int prev_key_space;
 	Lista_Tiros *tiros_nave = Create_Lista_Tiros();
 

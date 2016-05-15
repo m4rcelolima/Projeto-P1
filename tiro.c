@@ -27,7 +27,7 @@ void Draw_Tiro(Tiro *t, BITMAP *buffer)
 	circlefill(buffer, t->x,t->y, 5, makecol(0, 150, 230));
 }
 
-void Destry_Tiro(Tiro *t)
+void Destroy_Tiro(Tiro *t)
 {
 	free(t);
 }
@@ -95,7 +95,7 @@ void Draw_Lista_Tiros(Lista_Tiros *l, BITMAP *buffer)
 		aux = aux->prox;
 	}
 }
-void Destry_Lista_Tiros(Lista_Tiros *l)
+void Destroy_Lista_Tiros(Lista_Tiros *l)
 {
 	No_tiro *aux;
 
