@@ -48,18 +48,228 @@ int main()
 	pontos[0] = load_bitmap("img/pontos1.bmp", NULL);
 	pontos[1] = load_bitmap("img/pontos2.bmp", NULL);
 
-	BITMAP *invasor1[2];
-	invasor1[0] = load_bitmap("img/invasor1_1.bmp", NULL);
-	invasor1[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+	BITMAP *invasor1_1[2];
+	invasor1_1[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_1[1] = load_bitmap("img/invasor1_2.bmp", NULL);
 
-	BITMAP *invasor2[2];
-	invasor2[0] = load_bitmap("img/invasor2_1.bmp", NULL);
-	invasor2[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+	BITMAP *invasor1_2[2];
+	invasor1_2[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_2[1] = load_bitmap("img/invasor1_2.bmp", NULL);
 
-	BITMAP *invasor3[2];
-	invasor3[0] = load_bitmap("img/invasor3_1.bmp", NULL);
-	invasor3[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+	BITMAP *invasor1_3[2];
+	invasor1_3[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_3[1] = load_bitmap("img/invasor1_2.bmp", NULL);
 
+	BITMAP *invasor1_4[2];
+	invasor1_4[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_4[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_5[2];
+	invasor1_5[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_5[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_6[2];
+	invasor1_6[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_6[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_7[2];
+	invasor1_7[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_7[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_8[2];
+	invasor1_8[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_8[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_9[2];
+	invasor1_9[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_9[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_10[2];
+	invasor1_10[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_10[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_11[2];
+	invasor1_11[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_11[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_12[2];
+	invasor1_12[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_12[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_13[2];
+	invasor1_13[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_13[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_14[2];
+	invasor1_14[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_14[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_15[2];
+	invasor1_15[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_15[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_16[2];
+	invasor1_16[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_16[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_17[2];
+	invasor1_17[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_17[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+	BITMAP *invasor1_18[2];
+	invasor1_18[0] = load_bitmap("img/invasor1_1.bmp", NULL);
+	invasor1_18[1] = load_bitmap("img/invasor1_2.bmp", NULL);
+
+//========================================================================
+
+	BITMAP *invasor2_1[2];
+	invasor2_1[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_1[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_2[2];
+	invasor2_2[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_2[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_3[2];
+	invasor2_3[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_3[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_4[2];
+	invasor2_4[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_4[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_5[2];
+	invasor2_5[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_5[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_6[2];
+	invasor2_6[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_6[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_7[2];
+	invasor2_7[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_7[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_8[2];
+	invasor2_8[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_8[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_9[2];
+	invasor2_9[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_9[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_10[2];
+	invasor2_10[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_10[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_11[2];
+	invasor2_11[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_11[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_12[2];
+	invasor2_12[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_12[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_13[2];
+	invasor2_13[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_13[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_14[2];
+	invasor2_14[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_14[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_15[2];
+	invasor2_15[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_15[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_16[2];
+	invasor2_16[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_16[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_17[2];
+	invasor2_17[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_17[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+	BITMAP *invasor2_18[2];
+	invasor2_18[0] = load_bitmap("img/invasor2_1.bmp", NULL);
+	invasor2_18[1] = load_bitmap("img/invasor2_2.bmp", NULL);
+
+//========================================================================
+
+	BITMAP *invasor3_1[2];
+	invasor3_1[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_1[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_2[2];
+	invasor3_2[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_2[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_3[2];
+	invasor3_3[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_3[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_4[2];
+	invasor3_4[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_4[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_5[2];
+	invasor3_5[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_5[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_6[2];
+	invasor3_6[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_6[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_7[2];
+	invasor3_7[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_7[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_8[2];
+	invasor3_8[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_8[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_9[2];
+	invasor3_9[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_9[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_10[2];
+	invasor3_10[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_10[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_11[2];
+	invasor3_11[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_11[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_12[2];
+	invasor3_12[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_12[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_13[2];
+	invasor3_13[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_13[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_14[2];
+	invasor3_14[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_14[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_15[2];
+	invasor3_15[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_15[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_16[2];
+	invasor3_16[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_16[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_17[2];
+	invasor3_17[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_17[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+	BITMAP *invasor3_18[2];
+	invasor3_18[0] = load_bitmap("img/invasor3_1.bmp", NULL);
+	invasor3_18[1] = load_bitmap("img/invasor3_2.bmp", NULL);
+
+
+//========================================================================
 	//VARIAVEL
 
 	float pos_x = 220, pos_x1 = 265, pos_x2 = 310, pos_x3 = 355, pos_x4 = 400, pos_x5 = 445, pos_x6 = 490, pos_x7 = 535, pos_x8 = 580;
@@ -594,60 +804,60 @@ int main()
 			draw_sprite(buffer, fundo, 0, 0);
 			draw_sprite(buffer, moldura, 0, 0);
 			draw_sprite(buffer, logo, 10, 100);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x, pos_y);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x1, pos_y1);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x2, pos_y2);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x3, pos_y3);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x4, pos_y4);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x5, pos_y5);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x6, pos_y6);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x7, pos_y7);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x8, pos_y8);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x9, pos_y9);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x10, pos_y10);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x11, pos_y11);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x12, pos_y12);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x13, pos_y13);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x14, pos_y14);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x15, pos_y15);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x16, pos_y16);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x17, pos_y17);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x18, pos_y18);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x19, pos_y19);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x20, pos_y20);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x21, pos_y21);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x22, pos_y22);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x23, pos_y23);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x24, pos_y24);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x25, pos_y25);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x26, pos_y26);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x27, pos_y27);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x28, pos_y28);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x29, pos_y29);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x30, pos_y30);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x31, pos_y31);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x32, pos_y32);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x33, pos_y33);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x34, pos_y34);
-			draw_sprite(buffer, invasor3[frame_atual], pos_x35, pos_y35);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x36, pos_y36);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x37, pos_y37);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x38, pos_y38);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x39, pos_y39);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x40, pos_y40);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x41, pos_y41);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x42, pos_y42);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x43, pos_y43);
-			draw_sprite(buffer, invasor2[frame_atual], pos_x44, pos_y44);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x45, pos_y45);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x46, pos_y46);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x47, pos_y47);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x48, pos_y48);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x49, pos_y49);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x50, pos_y50);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x51, pos_y51);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x52, pos_y52);
-			draw_sprite(buffer, invasor1[frame_atual], pos_x53, pos_y53);
+			draw_sprite(buffer, invasor3_1[frame_atual], pos_x, pos_y);
+			draw_sprite(buffer, invasor3_2[frame_atual], pos_x1, pos_y1);
+			draw_sprite(buffer, invasor3_3[frame_atual], pos_x2, pos_y2);
+			draw_sprite(buffer, invasor3_4[frame_atual], pos_x3, pos_y3);
+			draw_sprite(buffer, invasor3_5[frame_atual], pos_x4, pos_y4);
+			draw_sprite(buffer, invasor3_6[frame_atual], pos_x5, pos_y5);
+			draw_sprite(buffer, invasor3_7[frame_atual], pos_x6, pos_y6);
+			draw_sprite(buffer, invasor3_8[frame_atual], pos_x7, pos_y7);
+			draw_sprite(buffer, invasor3_9[frame_atual], pos_x8, pos_y8);
+			draw_sprite(buffer, invasor2_1[frame_atual], pos_x9, pos_y9);
+			draw_sprite(buffer, invasor2_2[frame_atual], pos_x10, pos_y10);
+			draw_sprite(buffer, invasor2_3[frame_atual], pos_x11, pos_y11);
+			draw_sprite(buffer, invasor2_4[frame_atual], pos_x12, pos_y12);
+			draw_sprite(buffer, invasor2_5[frame_atual], pos_x13, pos_y13);
+			draw_sprite(buffer, invasor2_6[frame_atual], pos_x14, pos_y14);
+			draw_sprite(buffer, invasor2_7[frame_atual], pos_x15, pos_y15);
+			draw_sprite(buffer, invasor2_8[frame_atual], pos_x16, pos_y16);
+			draw_sprite(buffer, invasor2_9[frame_atual], pos_x17, pos_y17);
+			draw_sprite(buffer, invasor1_1[frame_atual], pos_x18, pos_y18);
+			draw_sprite(buffer, invasor1_2[frame_atual], pos_x19, pos_y19);
+			draw_sprite(buffer, invasor1_3[frame_atual], pos_x20, pos_y20);
+			draw_sprite(buffer, invasor1_4[frame_atual], pos_x21, pos_y21);
+			draw_sprite(buffer, invasor1_5[frame_atual], pos_x22, pos_y22);
+			draw_sprite(buffer, invasor1_6[frame_atual], pos_x23, pos_y23);
+			draw_sprite(buffer, invasor1_7[frame_atual], pos_x24, pos_y24);
+			draw_sprite(buffer, invasor1_8[frame_atual], pos_x25, pos_y25);
+			draw_sprite(buffer, invasor1_9[frame_atual], pos_x26, pos_y26);
+			draw_sprite(buffer, invasor3_10[frame_atual], pos_x27, pos_y27);
+			draw_sprite(buffer, invasor3_11[frame_atual], pos_x28, pos_y28);
+			draw_sprite(buffer, invasor3_12[frame_atual], pos_x29, pos_y29);
+			draw_sprite(buffer, invasor3_13[frame_atual], pos_x30, pos_y30);
+			draw_sprite(buffer, invasor3_14[frame_atual], pos_x31, pos_y31);
+			draw_sprite(buffer, invasor3_15[frame_atual], pos_x32, pos_y32);
+			draw_sprite(buffer, invasor3_16[frame_atual], pos_x33, pos_y33);
+			draw_sprite(buffer, invasor3_17[frame_atual], pos_x34, pos_y34);
+			draw_sprite(buffer, invasor3_18[frame_atual], pos_x35, pos_y35);
+			draw_sprite(buffer, invasor2_10[frame_atual], pos_x36, pos_y36);
+			draw_sprite(buffer, invasor2_11[frame_atual], pos_x37, pos_y37);
+			draw_sprite(buffer, invasor2_12[frame_atual], pos_x38, pos_y38);
+			draw_sprite(buffer, invasor2_13[frame_atual], pos_x39, pos_y39);
+			draw_sprite(buffer, invasor2_14[frame_atual], pos_x40, pos_y40);
+			draw_sprite(buffer, invasor2_15[frame_atual], pos_x41, pos_y41);
+			draw_sprite(buffer, invasor2_16[frame_atual], pos_x42, pos_y42);
+			draw_sprite(buffer, invasor2_17[frame_atual], pos_x43, pos_y43);
+			draw_sprite(buffer, invasor2_18[frame_atual], pos_x44, pos_y44);
+			draw_sprite(buffer, invasor1_10[frame_atual], pos_x45, pos_y45);
+			draw_sprite(buffer, invasor1_11[frame_atual], pos_x46, pos_y46);
+			draw_sprite(buffer, invasor1_12[frame_atual], pos_x47, pos_y47);
+			draw_sprite(buffer, invasor1_13[frame_atual], pos_x48, pos_y48);
+			draw_sprite(buffer, invasor1_14[frame_atual], pos_x49, pos_y49);
+			draw_sprite(buffer, invasor1_15[frame_atual], pos_x50, pos_y50);
+			draw_sprite(buffer, invasor1_16[frame_atual], pos_x51, pos_y51);
+			draw_sprite(buffer, invasor1_17[frame_atual], pos_x52, pos_y52);
+			draw_sprite(buffer, invasor1_18[frame_atual], pos_x53, pos_y53);
 			Draw_Lista_Tiros(tiros_nave, buffer);
 			draw_sprite(buffer, nave, nave_x, nave_y);
 			draw_sprite(buffer, pontos[frame_atual], 75, 30);
@@ -672,12 +882,117 @@ int main()
 	destroy_bitmap(nave);
 	destroy_bitmap(pontos[0]);
 	destroy_bitmap(pontos[1]);
-	destroy_bitmap(invasor1[0]);
-	destroy_bitmap(invasor1[1]);
-	destroy_bitmap(invasor2[0]);
-	destroy_bitmap(invasor2[1]);
-	destroy_bitmap(invasor3[0]);
-	destroy_bitmap(invasor3[1]);
+
+	destroy_bitmap(invasor1_1[0]);
+	destroy_bitmap(invasor1_2[0]);
+	destroy_bitmap(invasor1_3[0]);
+	destroy_bitmap(invasor1_4[0]);
+	destroy_bitmap(invasor1_5[0]);
+	destroy_bitmap(invasor1_6[0]);
+	destroy_bitmap(invasor1_7[0]);
+	destroy_bitmap(invasor1_8[0]);
+	destroy_bitmap(invasor1_9[0]);
+	destroy_bitmap(invasor1_10[0]);
+	destroy_bitmap(invasor1_11[0]);
+	destroy_bitmap(invasor1_12[0]);
+	destroy_bitmap(invasor1_13[0]);
+	destroy_bitmap(invasor1_14[0]);
+	destroy_bitmap(invasor1_15[0]);
+	destroy_bitmap(invasor1_16[0]);
+	destroy_bitmap(invasor1_17[0]);
+	destroy_bitmap(invasor1_18[0]);
+	destroy_bitmap(invasor1_1[1]);
+	destroy_bitmap(invasor1_2[1]);
+	destroy_bitmap(invasor1_3[1]);
+	destroy_bitmap(invasor1_4[1]);
+	destroy_bitmap(invasor1_5[1]);
+	destroy_bitmap(invasor1_6[1]);
+	destroy_bitmap(invasor1_7[1]);
+	destroy_bitmap(invasor1_8[1]);
+	destroy_bitmap(invasor1_9[1]);
+	destroy_bitmap(invasor1_10[1]);
+	destroy_bitmap(invasor1_11[1]);
+	destroy_bitmap(invasor1_12[1]);
+	destroy_bitmap(invasor1_13[1]);
+	destroy_bitmap(invasor1_14[1]);
+	destroy_bitmap(invasor1_15[1]);
+	destroy_bitmap(invasor1_16[1]);
+	destroy_bitmap(invasor1_17[1]);
+	destroy_bitmap(invasor1_18[1]);
+
+	destroy_bitmap(invasor2_1[0]);
+	destroy_bitmap(invasor2_2[0]);
+	destroy_bitmap(invasor2_3[0]);
+	destroy_bitmap(invasor2_4[0]);
+	destroy_bitmap(invasor2_5[0]);
+	destroy_bitmap(invasor2_6[0]);
+	destroy_bitmap(invasor2_7[0]);
+	destroy_bitmap(invasor2_8[0]);
+	destroy_bitmap(invasor2_9[0]);
+	destroy_bitmap(invasor2_10[0]);
+	destroy_bitmap(invasor2_11[0]);
+	destroy_bitmap(invasor2_12[0]);
+	destroy_bitmap(invasor2_13[0]);
+	destroy_bitmap(invasor2_14[0]);
+	destroy_bitmap(invasor2_15[0]);
+	destroy_bitmap(invasor2_16[0]);
+	destroy_bitmap(invasor2_17[0]);
+	destroy_bitmap(invasor2_18[0]);
+	destroy_bitmap(invasor2_1[1]);
+	destroy_bitmap(invasor2_2[1]);
+	destroy_bitmap(invasor2_3[1]);
+	destroy_bitmap(invasor2_4[1]);
+	destroy_bitmap(invasor2_5[1]);
+	destroy_bitmap(invasor2_6[1]);
+	destroy_bitmap(invasor2_7[1]);
+	destroy_bitmap(invasor2_8[1]);
+	destroy_bitmap(invasor2_9[1]);
+	destroy_bitmap(invasor2_10[1]);
+	destroy_bitmap(invasor2_11[1]);
+	destroy_bitmap(invasor2_12[1]);
+	destroy_bitmap(invasor2_13[1]);
+	destroy_bitmap(invasor2_14[1]);
+	destroy_bitmap(invasor2_15[1]);
+	destroy_bitmap(invasor2_16[1]);
+	destroy_bitmap(invasor2_17[1]);
+	destroy_bitmap(invasor2_18[1]);
+
+	destroy_bitmap(invasor3_1[0]);
+	destroy_bitmap(invasor3_2[0]);
+	destroy_bitmap(invasor3_3[0]);
+	destroy_bitmap(invasor3_4[0]);
+	destroy_bitmap(invasor3_5[0]);
+	destroy_bitmap(invasor3_6[0]);
+	destroy_bitmap(invasor3_7[0]);
+	destroy_bitmap(invasor3_8[0]);
+	destroy_bitmap(invasor3_9[0]);
+	destroy_bitmap(invasor3_10[0]);
+	destroy_bitmap(invasor3_11[0]);
+	destroy_bitmap(invasor3_12[0]);
+	destroy_bitmap(invasor3_13[0]);
+	destroy_bitmap(invasor3_14[0]);
+	destroy_bitmap(invasor3_15[0]);
+	destroy_bitmap(invasor3_16[0]);
+	destroy_bitmap(invasor3_17[0]);
+	destroy_bitmap(invasor3_18[0]);
+	destroy_bitmap(invasor3_1[1]);
+	destroy_bitmap(invasor3_2[1]);
+	destroy_bitmap(invasor3_3[1]);
+	destroy_bitmap(invasor3_4[1]);
+	destroy_bitmap(invasor3_5[1]);
+	destroy_bitmap(invasor3_6[1]);
+	destroy_bitmap(invasor3_7[1]);
+	destroy_bitmap(invasor3_8[1]);
+	destroy_bitmap(invasor3_9[1]);
+	destroy_bitmap(invasor3_10[1]);
+	destroy_bitmap(invasor3_11[1]);
+	destroy_bitmap(invasor3_12[1]);
+	destroy_bitmap(invasor3_13[1]);
+	destroy_bitmap(invasor3_14[1]);
+	destroy_bitmap(invasor3_15[1]);
+	destroy_bitmap(invasor3_16[1]);
+	destroy_bitmap(invasor3_17[1]);
+	destroy_bitmap(invasor3_18[1]);
 
 	return 0;
 }
