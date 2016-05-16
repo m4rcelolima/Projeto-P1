@@ -1,5 +1,5 @@
 #include <allegro.h>
-
+#include "tiro.h"
 #define VEL 8
 
 volatile int ticks;
@@ -89,6 +89,9 @@ int main()
 	int cont = 0;//CONTADOR PARA MOVIMENTA UMA FILA POR VEZ
 
 	int num_frames = 2, frame_atual = 0, tempo_trocar = 400, i, set_i = 0;
+	int nave_x = 201, nave_y = 550;
+	int prev_key_space;
+	Lista_Tiros *tiros_nave = Create_Lista_Tiros();
 
 	while(!key[KEY_ESC])
 	{
@@ -98,22 +101,34 @@ int main()
 
 			if(key[KEY_RIGHT])
 			{
-				set_i++;
+				nave_x += 3;
 			}
 			else if(key[KEY_LEFT])
 			{
-				set_i--;
+				nave_x -= 3;
+			}
+
+			prev_key_space = key[KEY_SPACE];
+			poll_keyboard();
+
+
+			//ATIRAR
+			if(key[KEY_SPACE] && !prev_key_space)
+			{
+				Insere_Tiro(tiros_nave, nave_x+11, nave_y);
 			}
 
 			//ATUALIZAÇÂO
 
-			if(set_i >= 185)
+			Update_Lista_Tiros(tiros_nave);
+
+			if(nave_x >= 757)
 			{
-				set_i = 185;
+				nave_x = 757;
 			}
-			else if(set_i <= 0)
+			else if(nave_x <= 202)
 			{
-				set_i = 0;
+				nave_x = 202;
 			}
 
 			frame_atual = (milisegundos / tempo_trocar) % num_frames;
@@ -633,7 +648,8 @@ int main()
 			draw_sprite(buffer, invasor1[frame_atual], pos_x51, pos_y51);
 			draw_sprite(buffer, invasor1[frame_atual], pos_x52, pos_y52);
 			draw_sprite(buffer, invasor1[frame_atual], pos_x53, pos_y53);
-			draw_sprite(buffer, nave, 201 + (set_i*3), 550);
+			Draw_Lista_Tiros(tiros_nave, buffer);
+			draw_sprite(buffer, nave, nave_x, nave_y);
 			draw_sprite(buffer, pontos[frame_atual], 75, 30);
 			draw_sprite(screen, buffer, 0, 0);			
 			clear(buffer);
@@ -652,6 +668,7 @@ int main()
 	destroy_bitmap(fundo);
 	destroy_bitmap(moldura);
 	destroy_bitmap(logo);
+	Destroy_Lista_Tiros(tiros_nave);
 	destroy_bitmap(nave);
 	destroy_bitmap(pontos[0]);
 	destroy_bitmap(pontos[1]);
