@@ -922,7 +922,7 @@ int main()
 			clear(buffer);
 
 			//COLISÃO
-			if ( fcolisao(nave_x, nave_y, *nave, pos_x, pos_y, *invasor3_1)==TRUE )
+			if ( fcolisao(nave_x, nave_y, nave, pos_x, pos_y, invasor3_1)==TRUE )
 			{
 				//INSERIR SPRITE TRANSPARENTE AQUI
 				nave = load_bitmap("img/invasor3_3.bmp", NULL);
