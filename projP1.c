@@ -24,6 +24,47 @@ void decrementa_pontuacao()
 }
 END_OF_FUNCTION(decrementa_pontuacao);
 
+int max (int a, int b)
+{
+	if (a>=b)
+		return a;
+	else
+		return b;
+}
+
+int min(int a, int b)
+{
+	if (a<=b)
+		return a;
+	else
+		return b;
+}
+
+int fcolisao(int x1, int y1, BITMAP* obj1, int x2, int y2, BITMAP* obj2)
+{
+	int i, j;
+	int colisao = FALSE;
+	if ( !( (x1>x2 + obj2->w) || (y1>y2 + obj2->h) || (x2>x1 + obj1->w) || (y2>y1 + obj1->h) ) )
+	{
+		int cima = max(y1, y2);
+		int baixo = min(y1 + obj1->h, y2 + obj2->h);
+		int esquerda = max(x1, x2);
+		int direita = min(x1 + obj1->w, x2 + obj2->w);
+
+		for(i=cima; i<baixo && !colisao; j++)
+		{
+			for(j=esquerda; j<direita && !colisao; j++)
+			{
+				if(getpixel(obj1, j-x1, i-x1) != makecol(255,0,255) && getpixel(obj2, j-x2, i-y2) != makecol(255,0,255))
+				{
+					colisao = TRUE;
+				}
+			}
+		}
+	}
+	return colisao;
+}
+
 int main()
 {
 	allegro_init();
@@ -879,6 +920,13 @@ int main()
 			textprintf_ex(buffer, font, 93, 50, makecol(255, 255, 255), -1, "%d", pontuacao);
 			draw_sprite(screen, buffer, 0, 0);			
 			clear(buffer);
+
+			//COLISÃO
+			if ( fcolisao(nave_x, nave_y, *nave, pos_x, pos_y, *invasor3_1)==TRUE )
+			{
+				//INSERIR SPRITE TRANSPARENTE AQUI
+				nave = load_bitmap("img/invasor3_3.bmp", NULL);
+			}
 
 			ticks--;
 			cont++;
