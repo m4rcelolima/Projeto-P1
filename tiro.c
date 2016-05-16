@@ -6,7 +6,7 @@ Tiro *Create_Tiro(int x, int y)
 
 	t->x = x;
 	t->y = y;
-	t->speed = 10;
+	t->speed = 2;
 	t->ativo = TRUE;
 
 	return t;
@@ -16,7 +16,7 @@ void Update_Tiro(Tiro *t)
 {
 	t->y -= t->speed;
 
-	if(t->y < 10)
+	if(t->y < 25)
 	{
 		t->ativo = FALSE;
 	}
@@ -24,7 +24,7 @@ void Update_Tiro(Tiro *t)
 
 void Draw_Tiro(Tiro *t, BITMAP *buffer)
 {
-	circlefill(buffer, t->x,t->y, 5, makecol(0, 150, 230));
+	circlefill(buffer, t->x,t->y, 3, makecol(250, 230, 0));
 }
 
 void Destroy_Tiro(Tiro *t)
