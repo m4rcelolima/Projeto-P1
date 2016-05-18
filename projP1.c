@@ -33,7 +33,7 @@ int main()
 	install_keyboard();
 	set_color_depth(32);
 	set_gfx_mode(GFX_AUTODETECT_WINDOWED, 800, 600, 0, 0);
-	set_window_title("pROJ ePACE iNVADERS");
+	set_window_title("Space Invaders - Projeto P1");
 
 	ticks = 0;
 	LOCK_FUNCTION(tick_couter);
@@ -1037,7 +1037,7 @@ int main()
 			if(pontuacao == 0)
 			{
 				draw_sprite(buffer, perdeu, 450, 50);
-				textout(buffer, font,"Voçê Perdeu!", 440, 155, makecol(255,255,255));
+				textout(buffer, font,"Você Perdeu!", 440, 155, makecol(255,255,255));
 			}
 			draw_sprite(screen, buffer, 0, 0);			
 			clear(buffer);
