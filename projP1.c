@@ -1,6 +1,5 @@
 #include <allegro.h>
 #include "tiro.h"
-#define VEL 28
 #define queda 30
 
 volatile int ticks;
@@ -20,7 +19,10 @@ END_OF_FUNCTION(msec_couter);
 volatile int pontuacao;
 void decrementa_pontuacao()
 { 
-	pontuacao--;
+	if(Vcont != 54 && pontuacao > 0)
+	{
+		pontuacao--;
+	}
 }
 END_OF_FUNCTION(decrementa_pontuacao);
 
@@ -56,6 +58,8 @@ int main()
 	BITMAP *moldura = load_bitmap("img/moldura.bmp", NULL);
 	BITMAP *logo = load_bitmap("img/logo.bmp", NULL);
 	BITMAP *nave = load_bitmap("img/nave.bmp", NULL);
+	BITMAP *vitoria = load_bitmap("img/vitoria.bmp", NULL);
+	BITMAP *perdeu = load_bitmap("img/perdeu.bmp", NULL);
 
 	BITMAP *pontos[2];
 	pontos[0] = load_bitmap("img/pontos1.bmp", NULL);
@@ -285,36 +289,13 @@ int main()
 //========================================================================
 	//VARIAVEL
 
-	float pos_x = 210, pos_x1 = 250, pos_x2 = 290, pos_x3 = 330, pos_x4 = 370, pos_x5 = 410, pos_x6 = 450, pos_x7 = 490, pos_x8 = 530;
-	float pos_x9 = 210, pos_x10 = 250, pos_x11 = 290, pos_x12 = 330, pos_x13 = 370, pos_x14 = 410, pos_x15 = 450, pos_x16 = 490, pos_x17 = 530;
-	float pos_x18 = 210, pos_x19 = 250, pos_x20 = 290, pos_x21 = 330, pos_x22 = 370, pos_x23 = 410, pos_x24 = 450, pos_x25 = 490, pos_x26 = 530;
-
-	float vel_x = VEL, vel_x1 = VEL, vel_x2 = VEL, vel_x3 = VEL, vel_x4 = VEL, vel_x5 = VEL, vel_x6 = VEL, vel_x7 = VEL, vel_x8 = VEL;
-	float vel_x9 = VEL, vel_x10 = VEL, vel_x11 = VEL, vel_x12 = VEL, vel_x13 = VEL, vel_x14 = VEL, vel_x15 = VEL, vel_x16 = VEL, vel_x17 = VEL;
-	float vel_x18 = VEL, vel_x19 = VEL, vel_x20 = VEL, vel_x21 = VEL, vel_x22 = VEL, vel_x23 = VEL, vel_x24 = VEL, vel_x25 = VEL, vel_x26 = VEL;
-
-	float pos_y = 45, pos_y1 = 45, pos_y2 = 45, pos_y3 = 45, pos_y4 = 45, pos_y5 = 45, pos_y6 = 45, pos_y7 = 45, pos_y8 = 45;
-	float pos_y9 = 80, pos_y10 = 80, pos_y11 = 80, pos_y12 = 80, pos_y13 = 80, pos_y14 = 80, pos_y15 = 80, pos_y16 = 80, pos_y17 = 80;
-	float pos_y18 = 110, pos_y19 = 110, pos_y20 = 110, pos_y21 = 110, pos_y22 = 110, pos_y23 = 110, pos_y24 = 110, pos_y25 = 110, pos_y26 = 110;
-
-	float pos_x27 = 210, pos_x28 = 250, pos_x29 = 290, pos_x30 = 330, pos_x31 = 370, pos_x32 = 410, pos_x33 = 450, pos_x34 = 490, pos_x35 = 530;
-	float pos_x36 = 210, pos_x37 = 250, pos_x38 = 290, pos_x39 = 330, pos_x40 = 370, pos_x41 = 410, pos_x42 = 450, pos_x43 = 490, pos_x44 = 530;
-	float pos_x45 = 210, pos_x46 = 250, pos_x47 = 290, pos_x48 = 330, pos_x49 = 370, pos_x50 = 410, pos_x51 = 450, pos_x52 = 490, pos_x53 = 530;
-
-	float vel_x27 = VEL, vel_x28 = VEL, vel_x29 = VEL, vel_x30 = VEL, vel_x31 = VEL, vel_x32 = VEL, vel_x33 = VEL, vel_x34 = VEL, vel_x35 = VEL;
-	float vel_x36 = VEL, vel_x37 = VEL, vel_x38 = VEL, vel_x39 = VEL, vel_x40 = VEL, vel_x41 = VEL, vel_x42 = VEL, vel_x43 = VEL, vel_x44 = VEL;
-	float vel_x45 = VEL, vel_x46 = VEL, vel_x47 = VEL, vel_x48 = VEL, vel_x49 = VEL, vel_x50 = VEL, vel_x51 = VEL, vel_x52 = VEL, vel_x53 = VEL;
-
-	float pos_y27 = 140, pos_y28 = 140, pos_y29 = 140, pos_y30 = 140, pos_y31 = 140, pos_y32 = 140, pos_y33 = 140, pos_y34 = 140, pos_y35 = 140;
-	float pos_y36 = 175, pos_y37 = 175, pos_y38 = 175, pos_y39 = 175, pos_y40 = 175, pos_y41 = 175, pos_y42 = 175, pos_y43 = 175, pos_y44 = 175;
-	float pos_y45 = 205, pos_y46 = 205, pos_y47 = 205, pos_y48 = 205, pos_y49 = 205, pos_y50 = 205, pos_y51 = 205, pos_y52 = 205, pos_y53 = 205;
-
-	int cont = 0;//CONTADOR PARA MOVIMENTA UMA FILA POR VEZ
+	int contaux = 0;//CONTADOR PARA MOVIMENTA UMA FILA POR VEZ
 
 	int num_frames = 2, frame_atual = 0, tempo_trocar = 200;
 	int nave_x = 201, nave_y = 550;
 	int prev_key_space;
 	Lista_Tiros *tiros_nave = Create_Lista_Tiros();
+	Tiro tiro;
 
 	while(!key[KEY_ESC])
 	{
@@ -339,8 +320,9 @@ int main()
 			
 			if(key[KEY_SPACE] && !prev_key_space)
 			{
-				Insere_Tiro(tiros_nave, nave_x+11, nave_y);
+				Insere_Tiro(tiros_nave, nave_x+9, nave_y);
 			}
+
 
 			//ATUALIZAÇÂO
 
@@ -358,7 +340,7 @@ int main()
 			frame_atual = (milisegundos / tempo_trocar) % num_frames;
 
 
-			if(cont == 18)
+			if(contaux == 18)
 			{
 				pos_x18 = pos_x18 + vel_x18;// MOVIMENTAÇÃO DOS INVASORES
 				pos_x19 = pos_x19 + vel_x19;
@@ -434,7 +416,7 @@ int main()
 				}
 			}
 			
-			else if(cont == 24)
+			else if(contaux == 24)
 			{
 				pos_x17 = pos_x17 + vel_x17;// MOVIMENTAÇÃO DOS INVASORES
 				pos_x16 = pos_x16 + vel_x16;
@@ -510,7 +492,7 @@ int main()
 					pos_x9 += vel_x9;				
 				}
 			}		
-			else if(cont == 30)
+			else if(contaux == 30)
 			{
 				pos_x = pos_x + vel_x;// MOVIMENTAÇÃO DOS INVASORES
 				pos_x1 = pos_x1 + vel_x1;
@@ -586,7 +568,7 @@ int main()
 					pos_x8 += vel_x8;				
 				}
 			}
-			if(cont == 12)
+			if(contaux == 12)
 			{
 				pos_x27 = pos_x27 + vel_x27;// MOVIMENTAÇÃO DOS INVASORES
 				pos_x28 = pos_x28 + vel_x28;
@@ -662,7 +644,7 @@ int main()
 				}
 			}
 			
-			else if(cont == 6)
+			else if(contaux == 6)
 			{
 				pos_x36 = pos_x36 + vel_x36;// MOVIMENTAÇÃO DOS INVASORES
 				pos_x37 = pos_x37 + vel_x37;
@@ -738,7 +720,7 @@ int main()
 					pos_x44 += vel_x44;				
 				}
 			}		
-			else if(cont == 0)
+			else if(contaux == 0)
 			{
 				pos_x45 = pos_x45 + vel_x45;// MOVIMENTAÇÃO DOS INVASORES
 				pos_x46 = pos_x46 + vel_x46;
@@ -814,77 +796,257 @@ int main()
 					pos_x53 += vel_x53;				
 				}
 			}
+			if(pontuacao == 0)
+			{
+				cont++, cont1++, cont2++, cont3++, cont4++, cont5++, cont6++, cont7++, cont8++, cont9++, cont10++, cont11++, cont12++,
+				cont13++, cont14++, cont15++, cont16++, cont17++, cont18++, cont19++, cont20++, cont21++, cont22++, cont23++, cont24++, cont25++,
+				cont26++, cont27++, cont28++, cont29++, cont30++, cont31++, cont32++, cont33++, cont34++, cont35++, cont36++, cont37++, cont38++,
+				cont39++, cont40++, cont41++, cont42++, cont43++, cont44++, cont45++, cont46++, cont47++, cont48++, cont49++, cont50++, cont51++,
+				cont52++, cont53++;
+			}
 
 			//DESENHAR
 			draw_sprite(buffer, fundo, 0, 0);
 			draw_sprite(buffer, moldura, 0, 0);
 			draw_sprite(buffer, logo, 10, 100);
-			draw_sprite(buffer, invasor3_1[frame_atual], pos_x, pos_y);
-			draw_sprite(buffer, invasor3_2[frame_atual], pos_x1, pos_y1);
-			draw_sprite(buffer, invasor3_3[frame_atual], pos_x2, pos_y2);
-			draw_sprite(buffer, invasor3_4[frame_atual], pos_x3, pos_y3);
-			draw_sprite(buffer, invasor3_5[frame_atual], pos_x4, pos_y4);
-			draw_sprite(buffer, invasor3_6[frame_atual], pos_x5, pos_y5);
-			draw_sprite(buffer, invasor3_7[frame_atual], pos_x6, pos_y6);
-			draw_sprite(buffer, invasor3_8[frame_atual], pos_x7, pos_y7);
-			draw_sprite(buffer, invasor3_9[frame_atual], pos_x8, pos_y8);
-			draw_sprite(buffer, invasor2_1[frame_atual], pos_x9, pos_y9);
-			draw_sprite(buffer, invasor2_2[frame_atual], pos_x10, pos_y10);
-			draw_sprite(buffer, invasor2_3[frame_atual], pos_x11, pos_y11);
-			draw_sprite(buffer, invasor2_4[frame_atual], pos_x12, pos_y12);
-			draw_sprite(buffer, invasor2_5[frame_atual], pos_x13, pos_y13);
-			draw_sprite(buffer, invasor2_6[frame_atual], pos_x14, pos_y14);
-			draw_sprite(buffer, invasor2_7[frame_atual], pos_x15, pos_y15);
-			draw_sprite(buffer, invasor2_8[frame_atual], pos_x16, pos_y16);
-			draw_sprite(buffer, invasor2_9[frame_atual], pos_x17, pos_y17);
-			draw_sprite(buffer, invasor1_1[frame_atual], pos_x18, pos_y18);
-			draw_sprite(buffer, invasor1_2[frame_atual], pos_x19, pos_y19);
-			draw_sprite(buffer, invasor1_3[frame_atual], pos_x20, pos_y20);
-			draw_sprite(buffer, invasor1_4[frame_atual], pos_x21, pos_y21);
-			draw_sprite(buffer, invasor1_5[frame_atual], pos_x22, pos_y22);
-			draw_sprite(buffer, invasor1_6[frame_atual], pos_x23, pos_y23);
-			draw_sprite(buffer, invasor1_7[frame_atual], pos_x24, pos_y24);
-			draw_sprite(buffer, invasor1_8[frame_atual], pos_x25, pos_y25);
-			draw_sprite(buffer, invasor1_9[frame_atual], pos_x26, pos_y26);
-			draw_sprite(buffer, invasor3_10[frame_atual], pos_x27, pos_y27);
-			draw_sprite(buffer, invasor3_11[frame_atual], pos_x28, pos_y28);
-			draw_sprite(buffer, invasor3_12[frame_atual], pos_x29, pos_y29);
-			draw_sprite(buffer, invasor3_13[frame_atual], pos_x30, pos_y30);
-			draw_sprite(buffer, invasor3_14[frame_atual], pos_x31, pos_y31);
-			draw_sprite(buffer, invasor3_15[frame_atual], pos_x32, pos_y32);
-			draw_sprite(buffer, invasor3_16[frame_atual], pos_x33, pos_y33);
-			draw_sprite(buffer, invasor3_17[frame_atual], pos_x34, pos_y34);
-			draw_sprite(buffer, invasor3_18[frame_atual], pos_x35, pos_y35);
-			draw_sprite(buffer, invasor2_10[frame_atual], pos_x36, pos_y36);
-			draw_sprite(buffer, invasor2_11[frame_atual], pos_x37, pos_y37);
-			draw_sprite(buffer, invasor2_12[frame_atual], pos_x38, pos_y38);
-			draw_sprite(buffer, invasor2_13[frame_atual], pos_x39, pos_y39);
-			draw_sprite(buffer, invasor2_14[frame_atual], pos_x40, pos_y40);
-			draw_sprite(buffer, invasor2_15[frame_atual], pos_x41, pos_y41);
-			draw_sprite(buffer, invasor2_16[frame_atual], pos_x42, pos_y42);
-			draw_sprite(buffer, invasor2_17[frame_atual], pos_x43, pos_y43);
-			draw_sprite(buffer, invasor2_18[frame_atual], pos_x44, pos_y44);
-			draw_sprite(buffer, invasor1_10[frame_atual], pos_x45, pos_y45);
-			draw_sprite(buffer, invasor1_11[frame_atual], pos_x46, pos_y46);
-			draw_sprite(buffer, invasor1_12[frame_atual], pos_x47, pos_y47);
-			draw_sprite(buffer, invasor1_13[frame_atual], pos_x48, pos_y48);
-			draw_sprite(buffer, invasor1_14[frame_atual], pos_x49, pos_y49);
-			draw_sprite(buffer, invasor1_15[frame_atual], pos_x50, pos_y50);
-			draw_sprite(buffer, invasor1_16[frame_atual], pos_x51, pos_y51);
-			draw_sprite(buffer, invasor1_17[frame_atual], pos_x52, pos_y52);
-			draw_sprite(buffer, invasor1_18[frame_atual], pos_x53, pos_y53);
+			if(cont == 0)
+			{
+				draw_sprite(buffer, invasor3_1[frame_atual], pos_x, pos_y);
+			}
+			if(cont1 == 0)
+			{
+				draw_sprite(buffer, invasor3_2[frame_atual], pos_x1, pos_y1);
+			}
+			if(cont2 == 0)
+			{
+				draw_sprite(buffer, invasor3_3[frame_atual], pos_x2, pos_y2);
+			}
+			if(cont3 == 0)
+			{
+				draw_sprite(buffer, invasor3_4[frame_atual], pos_x3, pos_y3);
+			}
+			if(cont4 == 0)
+			{
+				draw_sprite(buffer, invasor3_5[frame_atual], pos_x4, pos_y4);
+			}
+			if(cont5 == 0)
+			{
+				draw_sprite(buffer, invasor3_6[frame_atual], pos_x5, pos_y5);
+			}
+			if(cont6 == 0)
+			{
+				draw_sprite(buffer, invasor3_7[frame_atual], pos_x6, pos_y6);
+			}
+			if(cont7 == 0)
+			{
+				draw_sprite(buffer, invasor3_8[frame_atual], pos_x7, pos_y7);
+			}
+			if(cont8 == 0)
+			{
+				draw_sprite(buffer, invasor3_9[frame_atual], pos_x8, pos_y8);
+			}
+			if(cont9 == 0)
+			{
+				draw_sprite(buffer, invasor2_1[frame_atual], pos_x9, pos_y9);
+			}
+			if(cont10 == 0)
+			{
+				draw_sprite(buffer, invasor2_2[frame_atual], pos_x10, pos_y10);
+			}
+			if(cont11 == 0)
+			{
+				draw_sprite(buffer, invasor2_3[frame_atual], pos_x11, pos_y11);
+			}
+			if(cont12 == 0)
+			{
+				draw_sprite(buffer, invasor2_4[frame_atual], pos_x12, pos_y12);
+			}
+			if(cont13 == 0)
+			{
+				draw_sprite(buffer, invasor2_5[frame_atual], pos_x13, pos_y13);
+			}
+			if(cont14 == 0)
+			{
+				draw_sprite(buffer, invasor2_6[frame_atual], pos_x14, pos_y14);
+			}
+			if(cont15 == 0)
+			{
+				draw_sprite(buffer, invasor2_7[frame_atual], pos_x15, pos_y15);
+			}
+			if(cont16 == 0)
+			{
+				draw_sprite(buffer, invasor2_8[frame_atual], pos_x16, pos_y16);
+			}
+			if(cont17 == 0)
+			{
+				draw_sprite(buffer, invasor2_9[frame_atual], pos_x17, pos_y17);
+			}
+			if(cont18 == 0)
+			{
+				draw_sprite(buffer, invasor1_1[frame_atual], pos_x18, pos_y18);
+			}
+			if(cont19 == 0)
+			{
+				draw_sprite(buffer, invasor1_2[frame_atual], pos_x19, pos_y19);
+			}
+			if(cont20 == 0)
+			{
+				draw_sprite(buffer, invasor1_3[frame_atual], pos_x20, pos_y20);
+			}
+			if(cont21 == 0)
+			{
+				draw_sprite(buffer, invasor1_4[frame_atual], pos_x21, pos_y21);
+			}
+			if(cont22 == 0)
+			{
+				draw_sprite(buffer, invasor1_5[frame_atual], pos_x22, pos_y22);
+			}
+			if(cont23 == 0)
+			{
+				draw_sprite(buffer, invasor1_6[frame_atual], pos_x23, pos_y23);
+			}
+			if(cont24 == 0)
+			{
+				draw_sprite(buffer, invasor1_7[frame_atual], pos_x24, pos_y24);
+			}
+			if(cont25 == 0)
+			{
+				draw_sprite(buffer, invasor1_8[frame_atual], pos_x25, pos_y25);
+			}
+			if(cont26 == 0)
+			{
+				draw_sprite(buffer, invasor1_9[frame_atual], pos_x26, pos_y26);
+			}
+			if(cont27 == 0)
+			{
+				draw_sprite(buffer, invasor3_10[frame_atual], pos_x27, pos_y27);
+			}
+			if(cont28 == 0)
+			{
+				draw_sprite(buffer, invasor3_11[frame_atual], pos_x28, pos_y28);
+			}
+			if(cont29 == 0)
+			{
+				draw_sprite(buffer, invasor3_12[frame_atual], pos_x29, pos_y29);
+			}
+			if(cont30 == 0)
+			{
+				draw_sprite(buffer, invasor3_13[frame_atual], pos_x30, pos_y30);
+			}
+			if(cont31 == 0)
+			{
+				draw_sprite(buffer, invasor3_14[frame_atual], pos_x31, pos_y31);
+			}
+			if(cont32 == 0)
+			{
+				draw_sprite(buffer, invasor3_15[frame_atual], pos_x32, pos_y32);
+			}
+			if(cont33 == 0)
+			{
+				draw_sprite(buffer, invasor3_16[frame_atual], pos_x33, pos_y33);
+			}
+			if(cont34 == 0)
+			{
+				draw_sprite(buffer, invasor3_17[frame_atual], pos_x34, pos_y34);
+			}
+			if(cont35 == 0)
+			{
+				draw_sprite(buffer, invasor3_18[frame_atual], pos_x35, pos_y35);
+			}
+			if(cont36 == 0)
+			{
+				draw_sprite(buffer, invasor2_10[frame_atual], pos_x36, pos_y36);
+			}
+			if(cont37 == 0)
+			{
+				draw_sprite(buffer, invasor2_11[frame_atual], pos_x37, pos_y37);
+			}
+			if(cont38 == 0)
+			{
+				draw_sprite(buffer, invasor2_12[frame_atual], pos_x38, pos_y38);
+			}
+			if(cont39 == 0)
+			{
+				draw_sprite(buffer, invasor2_13[frame_atual], pos_x39, pos_y39);
+			}
+			if(cont40 == 0)
+			{
+				draw_sprite(buffer, invasor2_14[frame_atual], pos_x40, pos_y40);
+			}
+			if(cont41 == 0)
+			{
+				draw_sprite(buffer, invasor2_15[frame_atual], pos_x41, pos_y41);
+			}
+			if(cont42 == 0)
+			{
+				draw_sprite(buffer, invasor2_16[frame_atual], pos_x42, pos_y42);
+			}
+			if(cont43 == 0)
+			{
+				draw_sprite(buffer, invasor2_17[frame_atual], pos_x43, pos_y43);
+			}
+			if(cont44 == 0)
+			{
+				draw_sprite(buffer, invasor2_18[frame_atual], pos_x44, pos_y44);
+			}
+			if(cont45 == 0)
+			{
+				draw_sprite(buffer, invasor1_10[frame_atual], pos_x45, pos_y45);
+			}
+			if(cont46 == 0)
+			{
+				draw_sprite(buffer, invasor1_11[frame_atual], pos_x46, pos_y46);
+			}
+			if(cont47 == 0)
+			{
+				draw_sprite(buffer, invasor1_12[frame_atual], pos_x47, pos_y47);
+			}
+			if(cont48 == 0)
+			{
+				draw_sprite(buffer, invasor1_13[frame_atual], pos_x48, pos_y48);
+			}
+			if(cont49 == 0)
+			{
+				draw_sprite(buffer, invasor1_14[frame_atual], pos_x49, pos_y49);
+			}
+			if(cont50 == 0)
+			{
+				draw_sprite(buffer, invasor1_15[frame_atual], pos_x50, pos_y50);
+			}
+			if(cont51 == 0)
+			{
+				draw_sprite(buffer, invasor1_16[frame_atual], pos_x51, pos_y51);
+			}
+			if(cont52 == 0)
+			{
+				draw_sprite(buffer, invasor1_17[frame_atual], pos_x52, pos_y52);
+			}
+			if(cont53 == 0)
+			{
+				draw_sprite(buffer, invasor1_18[frame_atual], pos_x53, pos_y53);
+			}
 			Draw_Lista_Tiros(tiros_nave, buffer);
 			draw_sprite(buffer, nave, nave_x, nave_y);
 			draw_sprite(buffer, pontos[frame_atual], 75, 30);
 			textprintf_ex(buffer, font, 93, 50, makecol(255, 255, 255), -1, "%d", pontuacao);
+			if(Vcont == 54)
+			{
+				draw_sprite(buffer, vitoria, 450, 50);
+				textprintf_ex(buffer, font, 430, 155, makecol(255, 255, 255), -1, "Sua Pontuação: %d", pontuacao);
+			}
+			if(pontuacao == 0)
+			{
+				draw_sprite(buffer, perdeu, 450, 50);
+				textout(buffer, font,"Voçê Perdeu!", 440, 155, makecol(255,255,255));
+			}
 			draw_sprite(screen, buffer, 0, 0);			
 			clear(buffer);
 
 			ticks--;
-			cont++;
-			if(cont > 36)
+			contaux++;
+			if(contaux > 36)
 			{
-				cont = 0;
+				contaux = 0;
 			}
 		}
 	}
@@ -894,6 +1056,8 @@ int main()
 	destroy_bitmap(fundo);
 	destroy_bitmap(moldura);
 	destroy_bitmap(logo);
+	destroy_bitmap(vitoria);
+	destroy_bitmap(perdeu);
 	Destroy_Lista_Tiros(tiros_nave);
 	destroy_bitmap(nave);
 	destroy_bitmap(pontos[0]);
