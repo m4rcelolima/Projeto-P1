@@ -3,10 +3,12 @@
 
 #include <allegro.h>
 #include <stdlib.h>
+#include "posicao.c"
 
 
 typedef struct tiro
 {
+	BITMAP *img_tiro;
 	int x;
 	int y;
 	int speed;
